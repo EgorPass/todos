@@ -1,0 +1,55 @@
+@import "./templates.scss";
+
+.inputContainer {
+	&__acceptContainer{
+		@extend %resetBox;
+		@include setRect( 100%, 100%, none);
+		@include setFlex(row, center, center);
+	}
+
+	&__acceptButton {
+		@include setRect( 25px, 25px, none);
+		background-color: inherit;
+		border-radius: 50%;
+		position: relative;
+		
+		cursor: pointer;
+
+		&:active {
+			top: 3px;
+			left: 0px;
+		}
+	}
+	&__acceptButtonArrow {
+		@include setRect(11px, 11px, 3px solid gray);
+		border-top-style: none;
+		border-left-style: none;
+		transform: translate(0px, -3px) rotate(45deg);
+	}
+
+	&__inputBox {
+		@include setRect(100%, 100%, none);
+		@extend %resetBox;
+		@include setFlex(row, center, center);
+		
+	}
+
+	&__input {
+		box-sizing: border-box;
+		@include setRect(auto, 60%, none);
+		padding: 0 40px 0 0;
+		outline: none;
+		background-color: inherit;
+		color: black;
+		font: normal 30px/1 serif;
+		
+		@media( max-width: 350px) {
+			font-size: 18px;
+		}
+
+		&::placeholder {
+			font-style: italic;
+			color: rgba( 200, 200, 200, .5)
+		}
+	}
+}

@@ -1,0 +1,33 @@
+%resetBox {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+%echoContainer {
+	content: "";
+	position: absolute;
+	z-index: 98;
+	height: 30px;
+	background-color: rgb(245 245 245);
+	box-shadow: 0px 0px 6px gray;
+}
+
+@mixin setFlex( $dir, $j, $a ) {
+	display: flex;
+	flex-flow: $dir nowrap;
+	justify-content: $j;
+	align-items: $a;
+}
+
+@mixin setGrid( $col, $row ) {
+	display: grid;
+	grid-template-columns: $col;
+	grid-template-rows: $row;
+}
+
+@mixin setRect( $w, $h, $b ) {
+	width: $w;
+	height: $h;
+	border: $b;
+}
